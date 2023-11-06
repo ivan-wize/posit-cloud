@@ -3,13 +3,21 @@ import requests
 def test_star_wars_api():
     response = requests.get("https://swapi.dev/api/planets/")
 
-    # Request should return 200
+    # Verify response is 200
     assert response.status_code == 200, "API did not return a successful status code."
 
-    # Validate response
-    assert response.headers['Content-Type'] == 'application/json', "Content type is not JSON."
+    # Verify header
+    assert response.headers['Content-Type'] == 'application/json', "Not JSON."
 
-    print("The endpoint is up and running!")
+    # Verify JSON structure
+    data = response.json()
+    assert isinstance(data, dict), "Response not JSON"
 
-# Call the API test function
+    # Check JSON keys
+    expected_keys = {'count', 'next', 'previous', 'results'}
+    assert expected_keys.issubset(data.keys()), "Not expected keys"
+
+    print("The endpoint is UP AND RUNNING and all tests PASSED")
+
+'''Run Tests'''
 test_star_wars_api()
