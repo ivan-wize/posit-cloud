@@ -93,10 +93,14 @@ def delete_space():
 
     time.sleep(3)
 
-'''Run Tests'''
-log_in()
-create_new_space()
-delete_space()
-
-'''Close driver'''
-driver.quit()
+try:
+    '''Run Tests'''
+    log_in()
+    create_new_space()
+    delete_space()
+    print("All tests passed!!!")
+except Exception as e:
+    print(f"An error occurred: {e}")
+finally:
+    '''Close driver'''
+    driver.quit()
