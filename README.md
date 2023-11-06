@@ -26,7 +26,7 @@ To set up your environment to run the Selenium script, follow these steps:
     - Install ChromeDriver.
 
 ## Run the Script
-After setting up your environment, you can run the `testRun.py` script as follows:
+After setting up your environment, you can run the `positTestRun.py` script as follows:
 
 1. Ensure your virtual environment is activated:
 
