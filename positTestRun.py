@@ -4,6 +4,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
 
+'''Initialize Driver'''
 driver = webdriver.Chrome()
 wait = WebDriverWait(driver, 10)
 
@@ -93,6 +94,7 @@ def delete_space():
 
     time.sleep(3)
 
+'''Run Tests and return Results'''
 try:
     '''Run Tests'''
     log_in()
