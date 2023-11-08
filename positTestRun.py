@@ -8,7 +8,7 @@ import time
 driver = webdriver.Chrome()
 wait = WebDriverWait(driver, 10)
 
-'''Login as an existing user'''
+'''Login as an Existing User'''
 def log_in():
     # Open the login page
     driver.get("https://posit.cloud")
@@ -19,7 +19,7 @@ def log_in():
 
     # Wait until visible and input email
     email_input = wait.until(EC.visibility_of_element_located((By.NAME, "email")))
-    email_input.send_keys("ivan.wize+posit.test@gmail.com")
+    email_input.send_keys("ivan.wize+posit.test@gmail.com") # Hide Test Credentials
 
     # Wait until clickable and click Continue button
     continue_button = wait.until(EC.element_to_be_clickable((By.XPATH, "//button[.//span[text()='Continue']]")))
@@ -27,7 +27,7 @@ def log_in():
 
     # Wait until visible and input password
     password_input = wait.until(EC.visibility_of_element_located((By.NAME, "password")))
-    password_input.send_keys("posittest123")
+    password_input.send_keys("posittest123") # Hide Test Credentials
 
     # Wait until clickable and click Login button
     login_button = wait.until(EC.element_to_be_clickable((By.XPATH, "//button[.//span[text()='Log In']]")))
@@ -35,7 +35,7 @@ def log_in():
 
     time.sleep(1)
 
-'''Create new space'''
+'''Create New Space'''
 def create_new_space():
     # Wait for New Space button to appear and click it
     new_space_button = "//span[text()='New Space']"
@@ -56,7 +56,7 @@ def create_new_space():
 
     time.sleep(1)
 
-'''Delete new space'''
+'''Verify New Space Created and Delete New Space'''
 def delete_space():
     # Select the newly created space
     test_space = (By.XPATH, "//div[@class='spaceNameWithOwner' and contains(text(), 'Test Space')]")
